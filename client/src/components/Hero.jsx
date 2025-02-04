@@ -4,12 +4,13 @@ import hiveBg from "../assets/hero-assets/hive-bg.png";
 
 function Hero() {
   return (
-    <div className="w-full h-full bg-black flex">
-      <img src={face} alt="face.png" className="w-auto h-auto ml-10 bg-black" />
+    <div className="w-full h-full bg-black flex flex-col md:flex-row">
+      <div className="hidden md:block md:w-1/3 md:ml-20">
+        <img src={face} alt="face.png" className="w-full h-auto" />
+      </div>
 
-      {/* Text container with background image */}
       <div
-        className="mt-10  ml-20 text-white max-w-2xl p-10 relative z-10"
+        className="mt-10 text-white max-w-2xl p-10 relative z-10 mx-auto md:mt-0 md:ml-5"
         style={{
           backgroundImage: `url(${hiveBg})`,
           backgroundSize: "cover",
@@ -17,22 +18,22 @@ function Hero() {
           backgroundRepeat: "no-repeat",
         }}
       >
-        <div className="mt-10 text-left ml-[-13%] text-white max-w-2xl p-10 relative z-10">
-          <h1 className="text-6xl font-bold font-['Smooch_Sans']">
+        <div className="mt-10 text-left text-white max-w-2xl p-10 relative z-10 md:mt-5 md:p-5">
+          <h1 className="text-4xl font-bold font-['Smooch_Sans'] text-center md:text-6xl md:text-left">
             EMPOWERING INNOVATIONS, <br /> TRANSFORMING POSSIBILITIES
           </h1>
-          <p className="mt-2 text-lg font-['Montserrat'] text-gray-500 max-w-lg">
+          <p className="mt-2 text-lg font-['Montserrat'] text-gray-500 max-w-lg text-center md:text-left">
             GO8 Technology Inc., founded in February 2022, is a forward-thinking
             company specializing in innovative IT solutions.
           </p>
 
-          <div className="mt-5 ml-2">
-            <span className="text-md font-['Montserrat'] text-white">
+          <div className="mt-5 text-center md:text-left">
+            <span className="text-md font-['Montserrat'] text-white cursor-pointer">
               Get Started
             </span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 text-[#2669ff] ml-2 inline-block"
+              className="h-5 w-5 text-[#2669ff] ml-2 inline-block cursor-pointer"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
