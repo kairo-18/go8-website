@@ -17,7 +17,7 @@ import image13 from "../assets/footer-assets/image 13.png";
 function Footer() {
   return (
     <div className="">
-        <div className="mt-100 Company flex bg-black w-full items-center p-10 justify-center gap-10">
+        <div className="Company flex bg-black w-full items-center p-10 justify-center gap-10 mt-[-40px]">
             <img src={image7} alt="image7.png" className="w-25 h-22"/>
             <img src={image8} alt="image8.png" className="w-30 h-30"/>
             <img src={image9} alt="image9.png" className="w-30 h-34"/>
