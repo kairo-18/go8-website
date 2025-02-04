@@ -11,7 +11,7 @@ function Hero() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.7 }}
-        className="hidden md:block md:w-1/3 md:ml-20"
+        className="hidden md:block md:w-3/5 md:ml-20"
       >
         <img src={face} alt="face.png" className="w-full h-auto" />
       </motion.div>
@@ -21,7 +21,7 @@ function Hero() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: false, amount: 0.7 }}
-        className="mt-10 text-white max-w-2xl p-10 relative z-10 mx-auto md:mt-0 md:ml-5"
+        className="mt-10 text-white w-screen h-[80vh] p-10 relative z-10 mx-auto md:mt-0 md:ml-5"
         style={{
           backgroundImage: `url(${hiveBg})`,
           backgroundSize: "cover",
