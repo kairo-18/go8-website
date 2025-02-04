@@ -3,6 +3,13 @@ import face from "../assets/hero-assets/Face.png";
 import hiveBg from "../assets/hero-assets/hive-bg.png";
 
 function Hero() {
+  const handleGetStartedClick = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <div className="w-full h-full bg-black flex flex-col md:flex-row">
       <div className="hidden md:block md:w-1/3 md:ml-20">
@@ -28,7 +35,8 @@ function Hero() {
           </p>
 
           <div className="mt-5 text-center md:text-left">
-            <span className="text-md font-['Montserrat'] text-white cursor-pointer">
+            <span className="text-md font-['Montserrat'] text-white cursor-pointer"
+              onClick={handleGetStartedClick}>
               Get Started
             </span>
             <svg
