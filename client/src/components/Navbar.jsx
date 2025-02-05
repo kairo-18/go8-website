@@ -2,22 +2,22 @@ import React from "react";
 import logo from "/src/assets/navbar-assets/go8-logo2.png";
 import barsMenu from "/src/assets/navbar-assets/bars-menu.png";
 import { useState } from "react";
-import {motion} from "framer-motion";
+import { motion } from "framer-motion";
 import { useAnimate } from "framer-motion";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [scope, animate] = useAnimate();
 
-      function sequence() {
-        animate([
-            [scope.current, { rotate: -10 }],
-            [scope.current, { scale: 1.1 }],
-            [scope.current, { rotate: 10 }],
-            [scope.current, { rotate: 0 }],
-            [scope.current, { scale: 1 }]
-        ]);
-      }
+  function sequence() {
+    animate([
+      [scope.current, { rotate: -10 }],
+      [scope.current, { scale: 1.1 }],
+      [scope.current, { rotate: 10 }],
+      [scope.current, { rotate: 0 }],
+      [scope.current, { scale: 1 }],
+    ]);
+  }
 
   return (
     <div className="w-full h-full flex text-white p-5 justify-between items-center bg-black">
@@ -58,9 +58,8 @@ const Navbar = () => {
       </ul>
 
       <motion.a
-      ref={scope}
-      whileHover={sequence}
-
+        ref={scope}
+        whileHover={sequence}
         href="mailto:rcarlos@cmdsi.com"
         className="flex text-sm font-semibold text-black p-3 bg-white rounded-xl mr-[5%]"
       >
