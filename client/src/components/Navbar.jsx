@@ -2,9 +2,23 @@ import React from "react";
 import logo from "/src/assets/navbar-assets/go8-logo2.png";
 import barsMenu from "/src/assets/navbar-assets/bars-menu.png";
 import { useState } from "react";
+import {motion} from "framer-motion";
+import { useAnimate } from "framer-motion";
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
+  const [scope, animate] = useAnimate();
+
+      function sequence() {
+        animate([
+            [scope.current, { rotate: -10 }],
+            [scope.current, { scale: 1.1 }],
+            [scope.current, { rotate: 10 }],
+            [scope.current, { rotate: 0 }],
+            [scope.current, { scale: 1 }]
+        ]);
+      }
+
   return (
     <div className="w-full h-full flex text-white p-5 justify-between items-center bg-black">
       <div className="logo font-bold ml-[10%] flex">
@@ -43,15 +57,18 @@ const Navbar = () => {
         </li>
       </ul>
 
-      <a
-        href="#contact"
-        className="flex text-sm font-semibold text-black p-3 bg-white rounded-xl mr-[10%]"
+      <motion.a
+      ref={scope}
+      whileHover={sequence}
+
+        href="mailto:rcarlos@cmdsi.com"
+        className="flex text-sm font-semibold text-black p-3 bg-white rounded-xl mr-[5%]"
       >
         Contact Us
-      </a>
+      </motion.a>
 
       {showMenu && (
-        <ul className="list-style-none gap-12 absolute top-[7%] right-[5%] border-1 border-gray-300 p-5">
+        <ul className="list-style-none gap-12 absolute top-[10%] right-[5%] border-1 border-gray-300 p-5 z-50">
           <li className=" hover:underline">
             <a href="#about">
               <span className="text-[#2669FF] font-semibold">/</span>

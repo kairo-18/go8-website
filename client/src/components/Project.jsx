@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from "react";
+import {motion} from "framer-motion";
 
 function Project(props) {
     const [imageIndex, setImageIndex] = useState(0);
@@ -9,6 +10,7 @@ function Project(props) {
 
     return (
         <div
+
             className={
                 "flex " +
                 (props.reversed ? " sm:flex-row-reverse " : " sm:flex-row ") +
