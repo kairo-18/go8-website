@@ -6,7 +6,7 @@ function Values() {
     return (
         <div
             id="about"
-            className="OuterLayer bg-black sm:h-[75vh] w-screen sm:flex-row flex flex-col pl-20 pr-20 relative pt-15 overflow-x-clip"
+            className="OuterLayer bg-black sm:h-[75vh] w-screen sm:flex-row flex flex-col pl-20 pr-20 relative pt-15 overflow-x-clip mb-[5%]"
         >
             <div className="w-full sm:w-4/5 text-center sm:text-left flex flex-col content-between gap-20 z-1 ml-[5%]">
                 <div>
