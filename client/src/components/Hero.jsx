@@ -1,7 +1,7 @@
-import face from "../assets/hero-assets/Face.png";
-import hiveBg from "../assets/hero-assets/hive-bg.png";
+import face from "../assets/hero/Face.png";
+import hiveBg from "../assets/hero/hive-bg.png";
 import { motion } from "framer-motion";
-import { fadeIn, smoothScroll } from "../variants.js";
+import { fadeIn } from "../variants.js";
 
 function Hero() {
   return (
@@ -10,7 +10,7 @@ function Hero() {
         variants={fadeIn("left", 0.3)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.7 }}
+        viewport={{ once: true }}
         className="hidden md:block md:w-3/5 md:ml-20"
       >
         <img src={face} alt="face.png" className="w-full h-auto" />
@@ -20,7 +20,7 @@ function Hero() {
         variants={fadeIn("right", 0.5)}
         initial="hidden"
         whileInView="show"
-        viewport={{ once: false, amount: 0.7 }}
+        viewport={{ once: true }}
         className="mt-10 text-white w-screen h-[80vh] p-10 relative z-10 mx-auto md:mt-0 md:ml-5"
         style={{
           backgroundImage: `url(${hiveBg})`,
@@ -33,14 +33,14 @@ function Hero() {
           variants={fadeIn("up", 0.7)}
           initial="hidden"
           whileInView="show"
-          viewport={{ once: false, amount: 0.7 }}
+          viewport={{ once: true }}
           className="mt-15 text-left text-white max-w-2xl p-10 relative z-10 md:mt-5 md:p-5"
         >
           <motion.h1
             variants={fadeIn("up", 0.9)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.7 }}
+            viewport={{ once: true }}
             className="mt-12 text-4xl font-bold font-['Smooch_Sans'] text-center md:text-6xl md:text-left"
           >
             EMPOWERING INNOVATIONS, <br /> TRANSFORMING POSSIBILITIES
@@ -50,7 +50,7 @@ function Hero() {
             variants={fadeIn("up", 1.1)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.7 }}
+            viewport={{ once: true }}
             className="mt-2 text-lg font-['Montserrat'] text-gray-500 max-w-lg text-center md:text-left"
           >
             GO8 Technology Inc., founded in February 2022, is a forward-thinking
@@ -58,18 +58,18 @@ function Hero() {
           </motion.p>
 
           <motion.div
-            variants={fadeIn("up", 1.3)}
+            variants={fadeIn("up", 1.8)}
             initial="hidden"
             whileInView="show"
-            viewport={{ once: false, amount: 0.7 }}
-            className="mt-5 flex items-center space-x-2 cursor-pointer md:text-left"
+            viewport={{ once: true }}
+            className="mt-5 flex items-center space-x-2 cursor-pointer w-fit mx-auto md:mx-0 md:text-left"
             onClick={() =>
               window.scrollBy({ top: window.innerHeight, behavior: "smooth" })
             }
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <span className="text-md font-['Montserrat'] text-white">
+            <span className="text-md font-['Montserrat'] text-white ">
               Get Started
             </span>
             <motion.svg
