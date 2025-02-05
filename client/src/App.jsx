@@ -14,6 +14,7 @@ import aurum2 from "/src/assets/projects/aurum/aurum2.png";
 import aurum3 from "/src/assets/projects/aurum/aurum3.png";
 import projBg from "/src/assets/projects/proj-bg.png";
 import { motion } from "framer-motion";
+import Services from "./components/Services";
 const App = () => {
     return (
         <>
@@ -69,6 +70,7 @@ const App = () => {
                     </motion.div>
                 </div>
             </motion.div>
+            <Services />
             <Footer />
         </>
     );
