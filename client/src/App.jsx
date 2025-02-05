@@ -12,6 +12,7 @@ import arcus3 from "/src/assets/projects/arcus/arcus3.png";
 import aurum1 from "/src/assets/projects/aurum/aurum1.png";
 import aurum2 from "/src/assets/projects/aurum/aurum2.png";
 import aurum3 from "/src/assets/projects/aurum/aurum3.png";
+import projBg from "/src/assets/projects/proj-bg.png";
 import { motion } from "framer-motion";
 const App = () => {
     return (
@@ -27,7 +28,7 @@ const App = () => {
                 id="projects"
                 className="w-full h-full bg-black text-white pt-10 overflow-x-clip"
                 style={{
-                  backgroundImage: "url('/src/assets/projects/proj-bg.png')",
+                  backgroundImage: `url(${projBg})`,
                   backgroundSize: "cover",
                 }}
             >
