@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import TagCloud from "TagCloud";
 import textSphereBg from "../assets/core-services/text-sphere-bg.png";
 
@@ -15,41 +15,55 @@ const TextSphere = () => {
     ];
 
     const options = {
-      radius: window.innerWidth < 768 ? 120 : 200, // ✅ Responsive radius
+      radius: window.innerWidth < 768 ? 120 : 200,
       maxSpeed: "normal",
       initSpeed: "normal",
       keep: false,
     };
 
-    document.querySelector(container).innerHTML = ""; // ✅ Clear old elements
-
+    document.querySelector(container).innerHTML = "";
     TagCloud(container, texts, options);
   }, []);
 
   return (
     <div className="text-sphere w-full overflow-hidden">
-      {" "}
-      {/* ✅ Prevent overflow */}
-      <span className="tagcloud text-white text-lg"></span>
+      <span className="tagcloud text-lg"></span>
     </div>
   );
 };
 
 const Services = () => {
+  const [darkMode, setDarkMode] = useState(
+    document.documentElement.classList.contains("dark")
+  );
+
+  const toggleDarkMode = () => {
+    const html = document.documentElement;
+    if (darkMode) {
+      html.classList.remove("dark");
+      html.classList.add("light");
+    } else {
+      html.classList.remove("light");
+      html.classList.add("dark");
+    }
+    setDarkMode(!darkMode);
+  };
+
   return (
-    <div className="w-[90vw] h-[50vh] m-5 bg-black relative flex justify-between items-center overflow-hidden" id="services">
+    <div className="w-[90vw] h-[50vh] m-5 relative flex justify-between items-center overflow-hidden bg-white dark:bg-black text-black dark:text-white my-30" id="services">
       <TextSphere />
       <h1 className="text-5xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10 font-['Smooch_Sans']">
         CORE <br />
         SERVICES
       </h1>
 
+
       <style jsx="true">{`
         .text-sphere {
           position: relative;
           width: 70%;
           height: 100%;
-          max-width: 100%; /* ✅ Prevents overflow */
+          max-width: 100%;
           max-height: 100%;
           display: flex;
           justify-content: center;
@@ -57,7 +71,7 @@ const Services = () => {
           background: url(${textSphereBg}) no-repeat center;
           background-size: contain;
           z-index: 1;
-          overflow: hidden; /* ✅ Ensures extra content is clipped */
+          overflow: hidden;
         }
 
         .tagcloud {
@@ -67,11 +81,9 @@ const Services = () => {
           letter-spacing: 0.0625rem;
           font-size: 1rem;
           line-height: 1.5;
-          color: white;
         }
 
         .tagcloud--item {
-          color: white;
           text-transform: uppercase;
           font-size: 1rem;
           transition: color 0.3s ease;

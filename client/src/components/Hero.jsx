@@ -1,11 +1,12 @@
 import face from "../assets/hero/Face.png";
-import hiveBg from "../assets/hero/hive-bg.png";
+import hiveBg from "../assets/hero/transparent-hive.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants.js";
 
 function Hero() {
   return (
-    <div className="w-full h-full bg-black flex flex-col md:flex-row mt-20">
+    <div className="w-full h-full bg-white dark:bg-black flex flex-col md:flex-row mt-20 overflow-x-clip">
+      {/* Left Image Section */}
       <motion.div
         variants={fadeIn("left", 0.3)}
         initial="hidden"
@@ -16,12 +17,13 @@ function Hero() {
         <img src={face} alt="face.png" className="w-full h-auto" />
       </motion.div>
 
+      {/* Right Content Section */}
       <motion.div
         variants={fadeIn("right", 0.5)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-10 text-white w-screen h-[80vh] p-10 relative z-10 mx-auto md:mt-0 md:ml-5"
+        className="mt-10 w-screen h-[80vh] p-10 relative z-10 mx-auto md:mt-0 md:ml-5"
         style={{
           backgroundImage: `url(${hiveBg})`,
           backgroundSize: "cover",
@@ -34,29 +36,32 @@ function Hero() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="mt-15 text-left text-white max-w-2xl p-10 relative z-10 md:mt-5 md:p-5"
+          className="mt-15 text-left max-w-2xl p-10 relative z-10 md:mt-5 md:p-5"
         >
+          {/* Title */}
           <motion.h1
             variants={fadeIn("up", 0.9)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="mt-12 text-4xl font-bold font-['Smooch_Sans'] text-center md:text-6xl md:text-left"
+            className="mt-12 text-4xl font-bold font-['Smooch_Sans'] text-center md:text-6xl md:text-left text-black dark:text-white"
           >
             EMPOWERING INNOVATIONS, <br /> TRANSFORMING POSSIBILITIES
           </motion.h1>
 
+          {/* Description */}
           <motion.p
             variants={fadeIn("up", 1.1)}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
-            className="mt-2 text-lg font-['Montserrat'] text-gray-500 max-w-lg text-center md:text-left"
+            className="mt-2 text-lg font-['Montserrat'] text-gray-600 dark:text-gray-400 max-w-lg text-center md:text-left"
           >
             GO8 Technology Inc., founded in February 2022, is a forward-thinking
             company specializing in innovative IT solutions.
           </motion.p>
 
+          {/* Get Started Button */}
           <motion.div
             variants={fadeIn("up", 1.8)}
             initial="hidden"
@@ -69,7 +74,7 @@ function Hero() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <span className="text-md font-['Montserrat'] text-white ">
+            <span className="text-md font-['Montserrat'] text-black dark:text-white">
               Get Started
             </span>
             <motion.svg
