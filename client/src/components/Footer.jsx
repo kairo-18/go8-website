@@ -12,28 +12,16 @@ import image12 from "../assets/footer/image 12.png";
 import image13 from "../assets/footer/image 13.png";
 
 function Footer() {
+  const images = [image7, image8, image9, image10, image11, image12, image13];
+
   return (
     <div className="bg-white" id="affiliations">
       {/* Company Logos Section */}
       <div className="logos">
         <div className="logos-slide">
-          {/* First set of logos */}
-          <img src={image7} alt="image7.png" />
-          <img src={image8} alt="image8.png" />
-          <img src={image9} alt="image9.png" />
-          <img src={image10} alt="image10.png" />
-          <img src={image11} alt="image11.png" />
-          <img src={image12} alt="image12.png" />
-          <img src={image13} alt="image13.png" />
-
-          {/* Duplicate the logos for seamless looping */}
-          <img src={image7} alt="image7.png" />
-          <img src={image8} alt="image8.png" />
-          <img src={image9} alt="image9.png" />
-          <img src={image10} alt="image10.png" />
-          <img src={image11} alt="image11.png" />
-          <img src={image12} alt="image12.png" />
-          <img src={image13} alt="image13.png" />
+          {[...images, ...images].map((img, index) => (
+            <img key={index} src={img} alt={`logo-${index}`} />
+          ))}
         </div>
       </div>
 
