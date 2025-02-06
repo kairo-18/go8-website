@@ -37,7 +37,7 @@ const Services = () => {
   return (
     <div className="w-[90vw] h-[50vh] m-10 bg-black relative flex justify-between items-center overflow-hidden">
       <TextSphere />
-      <h1 className="text-4xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10">
+      <h1 className="text-5xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10 font-['Smooch_Sans']">
         CORE <br />
         SERVICES
       </h1>
