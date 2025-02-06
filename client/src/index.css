@@ -1,6 +1,10 @@
 @import "tailwindcss";
 
-body{
-    font-family: "Montserrat", serif;
-    background-color: black;
+body {
+  font-family: "Montserrat", serif;
+  background-color: black;
+}
+
+html {
+  scroll-behavior: smooth;
 }
