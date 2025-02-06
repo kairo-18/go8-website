@@ -17,6 +17,22 @@ import { motion } from "framer-motion";
 import Services from "./components/Services";
 
 const App = () => {
+    const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsSmallScreen(window.innerWidth < 768); // Consider screens less than 768px as small
+        };
+
+        // Call handleResize on initial load and window resize
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        // Cleanup on component unmount
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+
     return (
         <>
             <Navbar />
@@ -66,8 +82,8 @@ const App = () => {
                             images={[aurum1, aurum2, aurum3]}
                             title="AURUM NETWORK"
                             field="Blockchain Development"
-                            description="Aurum Network ($AUN) is redefining financial empowerment..."
-                            reversed={true}
+                            description='Aurum Network ($AUN) is redefining financial empowerment by making gold the core pillar of modern wealth-building strategies. Through cutting-edge blockchain technology, Aurum transcends the traditional "buy and hold" approach to gold ownership, transforming it into a dynamic, multifunctional asset that drives financial freedom and innovation.'
+                            reversed={!isSmallScreen}
                         />
                     </motion.div>
                 </div>
