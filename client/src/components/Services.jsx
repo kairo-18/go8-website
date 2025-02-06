@@ -15,20 +15,19 @@ const TextSphere = () => {
     ];
 
     const options = {
-      radius: 250,
+      radius: window.innerWidth < 768 ? 120 : 250, // ✅ Responsive radius
       maxSpeed: "normal",
       initSpeed: "normal",
       keep: false,
     };
 
-    // Clear the container before initializing TagCloud. wo ai ni DeepSeek and main land China
-    document.querySelector(container).innerHTML = "";
+    document.querySelector(container).innerHTML = ""; // ✅ Clear old elements
 
     TagCloud(container, texts, options);
   }, []);
 
   return (
-    <div className="text-sphere">
+    <div className="text-sphere w-full overflow-hidden"> {/* ✅ Prevent overflow */}
       <span className="tagcloud text-white text-lg"></span>
     </div>
   );
@@ -36,32 +35,34 @@ const TextSphere = () => {
 
 const Services = () => {
   return (
-    <div className="w-full h-[50vh] m-10 bg-black relative flex justify-between items-center">
+    <div className="w-[90vw] h-[50vh] m-10 bg-black relative flex justify-between items-center overflow-hidden">
       <TextSphere />
-      <h1 className="text-4xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10 ">
+      <h1 className="text-4xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10">
         CORE <br />
         SERVICES
       </h1>
 
-      <style jsx>{`
+      <style jsx="true">{`
         .text-sphere {
           position: relative;
-          top: 0;
           width: 70%;
           height: 100%;
+          max-width: 100%; /* ✅ Prevents overflow */
+          max-height: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
           background: url(${textSphereBg}) no-repeat center;
           background-size: contain;
           z-index: 1;
+          overflow: hidden; /* ✅ Ensures extra content is clipped */
         }
 
         .tagcloud {
           display: inline-block;
           position: relative;
           font-weight: 600;
-          letter-spacing: 0.0625r em;
+          letter-spacing: 0.0625rem;
           font-size: 1rem;
           line-height: 1.5;
           color: white;
