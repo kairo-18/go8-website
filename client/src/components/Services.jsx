@@ -50,7 +50,7 @@ const Services = () => {
   };
 
   return (
-    <div className="w-[90vw] h-[50vh] m-5 relative flex justify-between items-center overflow-hidden bg-white dark:bg-black text-black dark:text-white my-30" id="services">
+    <div className="w-[90vw] h-[50vh] m-5 relative flex justify-between items-center overflow-hidden bg-white dark:bg-black text-black dark:text-white mt-50" id="services">
       <TextSphere />
       <h1 className="text-5xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10 font-['Smooch_Sans']">
         CORE <br />
