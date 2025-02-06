@@ -16,7 +16,7 @@ import aurum3 from "/src/assets/projects/aurum/aurum3.png";
 import projBg from "/src/assets/projects/proj-bg.png";
 import { motion } from "framer-motion";
 import Services from "./components/Services";
-
+import Faq from "./components/Faq";
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
 
@@ -90,6 +90,7 @@ const App = () => {
       </motion.div>
       <Services />
       <Expertise />
+      <Faq />
       <Footer />
     </>
   );
