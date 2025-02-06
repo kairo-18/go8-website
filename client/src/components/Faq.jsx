@@ -24,7 +24,7 @@ const Faq = () => {
     ];
 
     return (
-        <div className="flex flex-col md:flex-row justify-around p-10">
+        <div className="flex flex-col md:flex-row justify-around p-10" id='careers'>
             <div className="w-full md:w-1/2 p-5">
                 <h2 className="text-2xl text-white font-bold mb-5 border-b-2 border-b-blue-600">CAREERS</h2>
                 {leftSections.map((section, index) => (
