@@ -61,7 +61,7 @@ const Navbar = () => {
         ref={scope}
         whileHover={sequence}
         href="mailto:rcarlos@cmdsi.com"
-        className="flex text-sm font-semibold text-black p-3 bg-white rounded-xl mr-[5%]"
+        className="flex text-sm font-semibold text-black p-3 bg-white rounded-xl sm:mr-[5%] mr-[10%]"
       >
         Contact Us
       </motion.a>
