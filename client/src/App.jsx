@@ -13,7 +13,7 @@ import arcus3 from "/src/assets/projects/arcus/arcus3.png";
 import aurum1 from "/src/assets/projects/aurum/aurum1.png";
 import aurum2 from "/src/assets/projects/aurum/aurum2.png";
 import aurum3 from "/src/assets/projects/aurum/aurum3.png";
-import projBg from "/src/assets/projects/proj-bg.png";
+import projBg from "/src/assets/projects/grid-bg-4.png";
 import { motion } from "framer-motion";
 import Services from "./components/Services";
 import Faq from "./components/Faq";
@@ -44,7 +44,7 @@ const App = () => {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ duration: 2, ease: [0.87, 0, 0.13, 1] }}
         id="projects"
-        className="w-full h-full bg-black text-white pt-10 overflow-x-hidden" // Changed overflow-x-clip to overflow-hidden
+        className="w-full h-full bg-white dark:bg-black text-black dark:text-white pt-10 overflow-x-hidden" // Changed overflow-x-clip to overflow-hidden
         style={{
           backgroundImage: `url(${projBg})`,
           backgroundSize: "cover",

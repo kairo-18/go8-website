@@ -39,7 +39,7 @@ function Project(props) {
             className={
                 "flex " +
                 (props.reversed ? " sm:flex-row-reverse " : " sm:flex-row ") +
-                "flex-col items-center mt-10 mb-10 shadow-2xl overflow-hidden"
+                "flex-col items-center mt-10 mb-10 overflow-hidden"
             }
         >
             <div
@@ -59,7 +59,7 @@ function Project(props) {
             </div>
 
             <div className={(props.reversed ? "mr-10 " : "ml-10 ") + "w-3/5 " + (props.reversed ? "text-right" : "text-left")}>
-                <h1 className="text-6xl text-white font-bold font-[Smooch_Sans]">
+                <h1 className="text-6xl text-black dark:text-white font-bold font-[Smooch_Sans]">
                     {props.title}
                 </h1>
                 <h2 className="text-2xl font-semibold text-[#2669FF]">

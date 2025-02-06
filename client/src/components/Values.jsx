@@ -26,7 +26,7 @@ function Values() {
   return (
     <div
       id="about"
-      className="OuterLayer bg-black sm:min-h-[75vh] w-full sm:flex-row flex flex-col px-5 sm:px-20 relative pt-15 mb-[5%] mt-10"
+      className="OuterLayer bg-white dark:bg-black sm:min-h-[75vh] w-full sm:flex-row flex flex-col px-5 sm:px-20 relative pt-15 mb-[5%] mt-10"
     >
       <div className="w-full sm:w-4/5 text-center sm:text-left flex flex-col content-between gap-20 z-2 sm:ml-[5%]">
         <motion.div
@@ -47,7 +47,7 @@ function Values() {
           </motion.h1>
 
           <motion.h4
-            className="text-white text-lg mt-5 max-w-[75%] sm:mx-0 mx-auto"
+            className="text-black dark:text-white text-lg mt-5 max-w-[75%] sm:mx-0 mx-auto"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.4 }}
@@ -92,14 +92,14 @@ function Values() {
                 <path d="M5 15l7-7 7 7"></path>
               </motion.svg>
             </div>
-            <h1 className="text-center text-3xl font-bold text-white transition-all duration-500 relative group-hover:-translate-y-4">
+            <h1 className="text-center text-3xl font-bold text-black dark:text-white transition-all duration-500 relative group-hover:-translate-y-4">
               OUR MISSION
               <span
                 className="block w-full h-1 mt-2 group-hover:mt-0 transition-all duration-500"
                 style={{ backgroundColor: "#2669ff" }}
               ></span>
             </h1>
-            <h4 className="text-center text-lg text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-[-90px] transition-all duration-700 absolute top-full mt-3 max-w-[80%]">
+            <h4 className="text-center text-lg text-black dark:text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-[-90px] transition-all duration-700 absolute top-full mt-3 max-w-[80%]">
               To empower businesses to thrive in the digital age, leveraging
               cutting-edge technologies towards growth, productivity, and
               efficiency.
@@ -135,14 +135,14 @@ function Values() {
                 <path d="M5 15l7-7 7 7"></path>
               </motion.svg>
             </div>
-            <h1 className="text-center text-3xl font-bold text-white transition-all duration-500 relative group-hover:-translate-y-4">
+            <h1 className="text-center text-3xl font-bold text-black dark:text-white transition-all duration-500 relative group-hover:-translate-y-4">
               OUR VISION
               <span
                 className="block w-full h-1 mt-2 group-hover:mt-0 transition-all duration-500"
                 style={{ backgroundColor: "#2669ff" }}
               ></span>
             </h1>
-            <h4 className="text-center text-lg text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-[-90px] transition-all duration-700 absolute top-full mt-3 max-w-[80%]">
+            <h4 className="text-center text-lg text-black dark:text-white opacity-0 translate-y-8 group-hover:opacity-100 group-hover:translate-y-[-90px] transition-all duration-700 absolute top-full mt-3 max-w-[80%]">
               To be the foremost business solutions provider to small and medium
               scale corporations in the country and abroad.
             </h4>

@@ -1,8 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Faq = () => {
     const [activeIndexLeft, setActiveIndexLeft] = useState(null);
     const [activeIndexRight, setActiveIndexRight] = useState(null);
+    const [darkMode, setDarkMode] = useState(document.documentElement.classList.contains("dark"));
+
+    useEffect(() => {
+        setDarkMode(document.documentElement.classList.contains("dark"));
+    }, []);
 
     const toggleLeft = (index) => {
         setActiveIndexLeft(activeIndexLeft === index ? null : index);
@@ -13,29 +18,29 @@ const Faq = () => {
     };
 
     const leftSections = [
-        { title1: 'Game Developer (Unity)',  description1: 'Full-time',  description2: 'On-site', content: 'for section 1' },
-        { title2: 'Junior Web Developer',    description3: 'Intern',     description4: 'On-site', content: 'Content for section 2' },
+        { title1: 'Game Developer (Unity)', description1: 'Full-time', description2: 'On-site', content: 'for section 1' },
+        { title2: 'Junior Web Developer', description3: 'Intern', description4: 'On-site', content: 'Content for section 2' },
     ];
 
     const rightSections = [
-        { title: 'What types of IT solutions does GO8 Technology Inc. offer?',                  button1: '+',    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' },
-        { title: 'Who can benefit from your services?',                                         button2: '+',    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' },
-        { title: 'How does GO8 Technology Inc. ensure its solutions meet my business needs?',   button3: '+',    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.' },
+        { title: 'What types of IT solutions does GO8 Technology Inc. offer?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+        { title: 'Who can benefit from your services?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+        { title: 'How does GO8 Technology Inc. ensure its solutions meet my business needs?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
     ];
 
     return (
-        <div className="flex flex-col md:flex-row justify-around p-10" id='careers'>
+        <div className="flex flex-col md:flex-row justify-around p-10 bg-white text-black dark:bg-black dark:text-white" id='careers'>
             <div className="w-full md:w-1/2 p-5">
-                <h2 className="text-2xl text-white font-bold mb-5 border-b-2 border-b-blue-600">CAREERS</h2>
+                <h2 className="text-2xl font-bold mb-5 border-b-2 border-blue-600 dark:border-blue-400">CAREERS</h2>
                 {leftSections.map((section, index) => (
                     <div key={index} className="mb-4">
-                        <div className="w-full text-left bg-transparent ">
-                            <div className="Career flex flex-col bg-transparent text-white border-gray-700">
+                        <div className="w-full text-left bg-transparent">
+                            <div className="Career flex flex-col bg-transparent border-gray-300 dark:border-gray-700">
                                 <div className="Title text-lg">{section.title1}</div>
                                 <div className="Description1 text-sm pl-3">{section.description1}</div>
                                 <div className="Description2 text-sm pl-3">{section.description2}</div>
                             </div>
-                            <div className="Career flex flex-col bg-transparent border-b-2 text-white border-gray-700">
+                            <div className="Career flex flex-col bg-transparent border-b-2 border-gray-300 dark:border-gray-700">
                                 <div className="Title text-lg">{section.title2}</div>
                                 <div className="Description3 text-sm pl-3">{section.description3}</div>
                                 <div className="Description4 text-sm pl-3 pb-3">{section.description4}</div>
@@ -45,23 +50,22 @@ const Faq = () => {
                 ))}
             </div>
             <div className="w-full md:w-1/2 p-5">
-                <h2 className="text-2xl text-white font-bold mb-5 border-b-2 border-b-blue-600">FAQ</h2>
+                <h2 className="text-2xl font-bold mb-5 border-b-2 border-blue-600 dark:border-blue-400">FAQ</h2>
                 {rightSections.map((section, index) => (
                     <div key={index} className="mb-4">
                         <button
-                            className="w-full text-left p-4 bg-black text-white rounded flex justify-between items-center transition duration-300 ease-in-out transform hover:bg-gray-800"
+                            className="w-full text-left p-4 bg-gray-200 text-black rounded flex justify-between items-center transition duration-300 ease-in-out transform hover:bg-gray-300 dark:bg-black dark:text-white dark:hover:bg-gray-700"
                             onClick={() => toggleRight(index)}
                         >
                             {section.title}
                             <span className="text-xl">{activeIndexRight === index ? '-' : '+'}</span>
                         </button>
                         {activeIndexRight === index && (
-                            <div className="p-4 bg-gray-800 text-white rounded mt-2 transition duration-300 ease-in-out transform">
+                            <div className="p-4 bg-gray-100 text-black rounded mt-2 transition duration-300 ease-in-out transform dark:bg-black dark:text-white">
                                 {section.content}
                             </div>
                         )}
-                        {/* Add a line with 30% transparency */}
-                        <div className="border-b-2 border-gray-700 mt-2"></div>
+                        <div className="border-b-2 border-gray-300 dark:border-gray-700 mt-2"></div>
                     </div>
                 ))}
             </div>

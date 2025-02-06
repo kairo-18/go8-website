@@ -1,8 +1,8 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
 body {
   font-family: "Montserrat", serif;
-  background-color: black;
 }
 
 html {
