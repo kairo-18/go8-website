@@ -25,12 +25,16 @@ const Navbar = () => {
         <div className="w-full flex text-white p-5 justify-between items-center bg-black fixed z-50 top-0">
             <div className="logo font-bold ml-[10%] flex">
                 <motion.img
-                    initial={[{ scale: 0, rotate: 360, x: -60 }]}
-                    animate={[{ scale: 1, rotate: 0, x: 0 }]}
-                    transition={{ duration: 0.55 }}
-                    src={go}
-                    className="w-15 h-15 mt-[-7px]"
-                />
+                initial={[
+                  { scale: 0, rotate: 360, x: -60},
+                ]}
+                animate={[
+                  { scale: 1, rotate: 0, x: 0},
+                ]}
+                transition={
+                  { duration: 0.55}
+                }
+                src={go} className="w-15 h-15 mt-[-7px]" />
                 <img src={o8} className="w-15 h-10 mt-[0px] ml-[-15px]" />
             </div>
             <ul className="hidden list-style-none gap-12 mr-[1%] lg:flex text-sm">
@@ -92,7 +96,7 @@ const Navbar = () => {
                 </li>
                 <li>
                     <motion.a
-                        href="#affiliations"
+                        href="#news"
                         whileHover={{
                             scale: 1.1,
                             color: "#2669FF",
@@ -101,7 +105,7 @@ const Navbar = () => {
                         className="flex items-center"
                     >
                         <span className="text-[#2669FF] font-semibold">/</span>
-                        Affiliations
+                        News and Articles
                     </motion.a>
                 </li>
             </ul>
@@ -110,13 +114,13 @@ const Navbar = () => {
                 ref={scope}
                 whileHover={sequence}
                 href="mailto:rcarlos@cmdsi.com"
-                className="flex text-sm font-semibold text-black p-3 bg-white rounded-xl md:mr-[15%] lg:mr-[5%] mr-[15%]"
+                className="flex text-sm font-semibold text-black p-3 bg-white rounded-xl sm:mr-[5%] mr-[10%]"
             >
                 Contact Us
             </motion.a>
 
             {showMenu && (
-                <ul className="list-style-none gap-12 absolute top-[100%] right-[5%] border-1 border-gray-300 p-5 z-50">
+                <ul className="list-style-none gap-12 absolute top-[10%] right-[5%] border-1 border-gray-300 p-5 z-50">
                     <li className=" hover:underline">
                         <a href="#about">
                             <span className="text-[#2669FF] font-semibold">
@@ -150,11 +154,11 @@ const Navbar = () => {
                         </a>
                     </li>
                     <li className=" hover:underline">
-                        <a href="#affiliations">
+                        <a href="#news">
                             <span className="text-[#2669FF] font-semibold">
                                 /
                             </span>
-                            Affiliations
+                            news
                         </a>
                     </li>
                 </ul>

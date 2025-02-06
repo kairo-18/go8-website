@@ -13,7 +13,7 @@ import image13 from "../assets/footer/image 13.png";
 
 function Footer() {
   return (
-    <div className="bg-white" id="affiliations">
+    <div className="bg-white">
       {/* Company Logos Section */}
       <div className="Company flex bg-black w-full items-center p-2 sm:p-4 justify-center gap- sm:gap-8 mt-[-20px] overflow-x-auto sm:overflow-x-visible">
         <img src={image7} alt="image7.png" className="w-12 h-10 sm:w-16 sm:h-14" />
