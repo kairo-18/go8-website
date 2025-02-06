@@ -28,7 +28,7 @@ const App = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 2, ease: [0.87, 0, 0.13, 1] }}
                 id="projects"
-                className="w-full h-full bg-black text-white pt-10 overflow-hidden" // Changed overflow-x-clip to overflow-hidden
+                className="w-full h-full bg-black text-white pt-10 overflow-x-hidden" // Changed overflow-x-clip to overflow-hidden
                 style={{
                     backgroundImage: `url(${projBg})`,
                     backgroundSize: "cover",
@@ -38,12 +38,13 @@ const App = () => {
                 <h1 className="text-3xl md:text-4xl text-left ml-[5%] md:ml-[9%] mt-10 mb-10 md:mb-20 font-bold text-[#2669FF]">
                     OUR PROJECTS
                 </h1>
-                <div className="space-y-10 md:space-y-0"> {/* Added spacing between projects for mobile */}
+                <div className="space-y-10 md:space-y-0 px-4 w-full max-w-full">
                     <motion.div
-                        initial={{ x: -500, opacity: 0, zIndex: 0 }}
+                        initial={{ x: -300, opacity: 0, zIndex: 0 }}
                         whileInView={{ x: 0, opacity: 1, zIndex: 0 }}
                         transition={{ duration: 2, ease: [0.87, 0, 0.13, 1] }}
-                        className="w-full overflow-hidden" // Changed overflow-x-clip to overflow-hidden
+                        viewport={{ once: true, amount: 0.1 }} // Increased threshold for small screens
+                        className="w-full max-w-full overflow-visible min-w-[200px] min-h-[40vh]" // Adjusted min-width and min-height
                     >
                         <Project
                             images={[arcus1, arcus2, arcus3]}
@@ -55,16 +56,17 @@ const App = () => {
                     </motion.div>
 
                     <motion.div
-                        initial={{ x: 500, opacity: 0 }}
+                        initial={{ x: 300, opacity: 0 }}
                         whileInView={{ x: 0, opacity: 1 }}
                         transition={{ duration: 2, ease: [0.87, 0, 0.13, 1] }}
-                        className="w-full overflow-hidden" // Changed overflow-x-clip to overflow-hidden
+                        viewport={{ once: true, amount: 0.1 }} // Increased threshold for small screens
+                        className="w-full max-w-full overflow-visible min-w-[200px] min-h-[40vh]" // Adjusted min-width and min-height
                     >
                         <Project
                             images={[aurum1, aurum2, aurum3]}
                             title="AURUM NETWORK"
                             field="Blockchain Development"
-                            description='Aurum Network ($AUN) is redefining financial empowerment by making gold the core pillar of modern wealth-building strategies. Through cutting-edge blockchain technology, Aurum transcends the traditional "buy and hold" approach to gold ownership, transforming it into a dynamic, multifunctional asset that drives financial freedom and innovation.'
+                            description="Aurum Network ($AUN) is redefining financial empowerment..."
                             reversed={true}
                         />
                     </motion.div>
