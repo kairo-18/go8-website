@@ -30,7 +30,7 @@ const Faq = () => {
                 {leftSections.map((section, index) => (
                     <div key={index} className="mb-4">
                         <div className="w-full text-left bg-transparent ">
-                            <div className="Career flex flex-col bg-transparent text-white border-gray-500">
+                            <div className="Career flex flex-col bg-transparent text-white border-gray-700">
                                 <div className="Title text-lg">{section.title1}</div>
                                 <div className="Description1 text-sm pl-3">{section.description1}</div>
                                 <div className="Description2 text-sm pl-3">{section.description2}</div>
@@ -41,7 +41,6 @@ const Faq = () => {
                                 <div className="Description4 text-sm pl-3 pb-3">{section.description4}</div>
                             </div>
                         </div>
-                        
                     </div>
                 ))}
             </div>
@@ -50,16 +49,19 @@ const Faq = () => {
                 {rightSections.map((section, index) => (
                     <div key={index} className="mb-4">
                         <button
-                            className="w-full text-left p-4 bg-gray-200 rounded transition duration-300 ease-in-out transform hover:bg-gray-300 hover:scale-105"
+                            className="w-full text-left p-4 bg-black text-white rounded flex justify-between items-center transition duration-300 ease-in-out transform hover:bg-gray-800"
                             onClick={() => toggleRight(index)}
                         >
                             {section.title}
+                            <span className="text-xl">{activeIndexRight === index ? '-' : '+'}</span>
                         </button>
                         {activeIndexRight === index && (
-                            <div className="p-4 bg-gray-100 rounded mt-2 transition duration-300 ease-in-out transform">
+                            <div className="p-4 bg-gray-800 text-white rounded mt-2 transition duration-300 ease-in-out transform">
                                 {section.content}
                             </div>
                         )}
+                        {/* Add a line with 30% transparency */}
+                        <div className="border-b-2 border-gray-700 mt-2"></div>
                     </div>
                 ))}
             </div>
