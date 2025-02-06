@@ -51,7 +51,7 @@ const App = () => {
                     backgroundPosition: "center", // Ensure the background image is centered
                 }}
             >
-                <h1 className="text-3xl md:text-4xl text-left ml-[5%] md:ml-[9%] mt-10 mb-10 md:mb-20 font-bold text-[#2669FF]">
+                <h1 className="text-3xl md:text-5xl text-left ml-[5%] md:ml-[9%] mt-10 mb-10 md:mb-20 font-bold text-[#2669FF] font-['Smooch_Sans']">
                     OUR PROJECTS
                 </h1>
                 <div className="space-y-10 md:space-y-0 px-4 w-full max-w-full">
