@@ -9,7 +9,6 @@ html {
   scroll-behavior: smooth;
 }
 
-/* For the Affiliation Section / Infinite Scroll */
 .logos {
   overflow: hidden;
   padding: 40px 0;

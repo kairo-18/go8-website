@@ -9,98 +9,110 @@ import image7 from "../assets/expertise/7.png";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
-const Expertise = () => {
+function Expertise() {
   const slides = [
-    { url: image1, title: "Enterprise Resource Planning" },
-    { url: image2, title: "Telecom" },
-    { url: image3, title: "Data Management System" },
-    { url: image4, title: "Hotel and Restaurant Management" },
-    { url: image5, title: "Financial Technology (FinTech)" },
-    { url: image6, title: "Game Development" },
-    { url: image7, title: "Blockchain" },
+    {
+      url: image1,
+      title: "Enterprise Resource Planning",
+    },
+    {
+      url: image2,
+      title: "Telecom",
+    },
+    {
+      url: image3,
+      title: "Data Management System",
+    },
+    {
+      url: image4,
+      title: "Hotel and Restaurant Management",
+    },
+    {
+      url: image5,
+      title: "Financial Technology (FinTech)",
+    },
+    {
+      url: image6,
+      title: "Game Development",
+    },
+    {
+      url: image7,
+      title: "Blockchain",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Go to previous slide
   const prevSlide = () => {
-    setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
   };
 
-  // Go to next slide
   const nextSlide = () => {
-    setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
   };
 
-  // Auto-slide functionality
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
+  // Auto-scroll functionality
   useEffect(() => {
-    const autoScroll = setInterval(nextSlide, 3000); // Slide every 3 seconds
-    return () => clearInterval(autoScroll); // Clean up on unmount
-  }, [currentIndex]);
+    const autoScroll = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(autoScroll); // Cleanup interval on unmount
+  }, [currentIndex]); // Re-run effect when currentIndex changes
 
   return (
-    <div className="w-full h-full bg-black text-white pt-5 overflow-hidden">
+    <div className="w-full h-full bg-black text-white pt-5 overflow-x-clip">
       <h1 className="text-6xl text-left ml-[9%] mt-1 font-bold text-[#2669FF] font-[Smooch_Sans]">
         INDUSTRY EXPERTISE
       </h1>
 
-      <div className="relative group max-w-[1500px] h-[566px] mx-auto py-16">
-        <div className="w-full h-full relative overflow-hidden">
-          {/* Slides container */}
-          <div
-            className="flex transition-transform duration-500 ease-out"
-            style={{
-              transform: `translateX(-${currentIndex * 100}%)`,
-            }}
-          >
-            {slides.map((slide, index) => (
-              <div
-                key={index}
-                className="w-full h-full flex-shrink-0 rounded-2xl"
-              >
-                <img
-                  src={slide.url}
-                  alt={slide.title}
-                  className="w-full h-full object-cover rounded-2xl"
-                />
-              </div>
-            ))}
-          </div>
-
+      <div className="max-w-[1500px] h-[566px] w-full m-auto py-16 py-4 relative group">
+        <div
+          style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+          className="w-full h-full rounded-2xl bg-center bg-cover duration-500 relative 
+              before:absolute before:top-0 before:left-0 before:w-1/4 before:h-full 
+              before:bg-gradient-to-r before:from-black before:to-transparent before:z-10 
+              before:pointer-events-none 
+              after:absolute after:top-0 after:right-0 after:w-1/4 after:h-full 
+              after:bg-gradient-to-l after:from-black after:to-transparent after:z-10 
+              after:pointer-events-none"
+        >
           {/* Left Arrow */}
-          <div
-            className="absolute top-1/2 left-5 text-2xl rounded-full p-2 bg-black/20 cursor-pointer z-10 transform -translate-y-1/2"
-            onClick={prevSlide}
-          >
-            <BsChevronCompactLeft size={30} />
+          <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 cursor-pointer z-10">
+            <BsChevronCompactLeft size={30} onClick={prevSlide} />
           </div>
 
           {/* Right Arrow */}
-          <div
-            className="absolute top-1/2 right-5 text-2xl rounded-full p-2 bg-black/20 cursor-pointer z-10 transform -translate-y-1/2"
-            onClick={nextSlide}
-          >
-            <BsChevronCompactRight size={30} />
+          <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 cursor-pointer z-20">
+            <BsChevronCompactRight size={30} onClick={nextSlide} />
           </div>
 
-          {/* Slide Dots */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
-            {slides.map((_, index) => (
+          <div className="flex top-4 justify-center py-2">
+            {slides.map((slide, slideIndex) => (
               <div
-                key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`cursor-pointer p-1 rounded-full transition-all ${
-                  index === currentIndex
-                    ? "bg-[#2669FF] scale-125"
-                    : "bg-white opacity-50"
-                }`}
-              />
+                key={slideIndex}
+                onClick={() => goToSlide(slideIndex)}
+                className="text-2xl cursor-pointer"
+              >
+                <RxDotFilled
+                  size={30}
+                  className={`${slideIndex === currentIndex ? "text-[#2669FF]" : ""}`}
+                />
+              </div>
             ))}
           </div>
         </div>
       </div>
     </div>
   );
-};
+}
 
 export default Expertise;
