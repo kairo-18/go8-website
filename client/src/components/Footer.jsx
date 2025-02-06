@@ -14,36 +14,44 @@ import image13 from "../assets/footer/image 13.png";
 function Footer() {
   return (
     <div className="bg-white">
-      <div className="Company flex bg-black w-full items-center p-10 justify-center gap-10 mt-[-40px] overflow-x-clip">
-        <img src={image7} alt="image7.png" className="w-25 h-22" />
-        <img src={image8} alt="image8.png" className="w-30 h-30" />
-        <img src={image9} alt="image9.png" className="w-30 h-34" />
-        <img src={image10} alt="image10.png" className="w-30 h-30" />
-        <img src={image11} alt="image11.png" className="w-60 h-25" />
-        <img src={image12} alt="image12.png" className="w-30 h-30" />
-        <img src={image13} alt="image13.png" className="w-30 h-30" />
+      {/* Company Logos Section */}
+      <div className="Company flex bg-black w-full items-center p-2 sm:p-4 justify-center gap- sm:gap-8 mt-[-20px] overflow-x-auto sm:overflow-x-visible">
+        <img src={image7} alt="image7.png" className="w-12 h-10 sm:w-16 sm:h-14" />
+        <img src={image8} alt="image8.png" className="w-16 h-16 sm:w-20 sm:h-20" />
+        <img src={image9} alt="image9.png" className="w-16 h-18 sm:w-20 sm:h-22" />
+        <img src={image10} alt="image10.png" className="w-16 h-16 sm:w-20 sm:h-20" />
+        <img src={image11} alt="image11.png" className="w-32 h-14 sm:w-40 sm:h-16" />
+        <img src={image12} alt="image12.png" className="w-16 h-16 sm:w-20 sm:h-20" />
+        <img src={image13} alt="image13.png" className="w-16 h-16 sm:w-20 sm:h-20" />
       </div>
-      <footer className="Outer-Footer lg:h-full md:flex-row items-center flex flex-col flex justify-between p-10 gap-10">
-        <div className="Logo-Name flex items-center">
-          <img src={go8} alt="facebook.png" />
-          <h1 className="">GO 8 Technology Inc.</h1>
+
+      {/* Footer Section */}
+      <footer className="Outer-Footer lg:h-full md:flex-row items-center flex flex-col justify-between p-4 sm:p-6 lg:p-8 gap-6 sm:gap-8 lg:gap-10">
+        {/* Logo and Company Name */}
+        <div className="Logo-Name flex items-center justify-center sm:justify-start mb-4 sm:mb-0">
+          <img src={go8} alt="GO8 Logo" className="w-16 h-16 sm:w-20 sm:h-20" />
+          <h1 className="text-lg sm:text-xl font-bold ml-3">GO 8 Technology Inc.</h1>
         </div>
-        <div className="Call-Send flex flex-col gap-10 content-center">
+
+        {/* Contact Section */}
+        <div className="Call-Send flex flex-col gap-4 sm:gap-6 content-center items-center sm:items-start">
           <div className="CallUs">
-            <h1>Call Us</h1>
-            <h1>09123456789</h1>
+            <h1 className="font-semibold text-sm sm:text-lg">Call Us</h1>
+            <h1 className="text-xs sm:text-sm text-gray-600">09123456789</h1>
           </div>
           <div className="SendUs">
-            <h1>Send Us a Message</h1>
-            <h1>information@go8.com</h1>
+            <h1 className="font-semibold text-sm sm:text-lg">Send Us a Message</h1>
+            <h1 className="text-xs sm:text-sm text-gray-600">information@go8.com</h1>
           </div>
         </div>
-        <div className="FollowUs">
-          <h1>Follow US</h1>
-          <div className="SocialMediaLogo flex">
-            <img src={facebook} alt="facebook.png" />
-            <img src={tiktok} alt="tiktok.png" />
-            <img src={youtube} alt="youtube.png" />
+
+        {/* Social Media Section */}
+        <div className="FollowUs text-center sm:text-left mt-4 sm:mt-0">
+          <h1 className="font-semibold text-sm sm:text-lg mb-2">Follow Us</h1>
+          <div className="SocialMediaLogo flex justify-center sm:justify-start gap-3 sm:gap-4">
+            <img src={facebook} alt="Facebook" className="w-6 h-6 sm:w-8 sm:h-8" />
+            <img src={tiktok} alt="TikTok" className="w-6 h-6 sm:w-8 sm:h-8" />
+            <img src={youtube} alt="YouTube" className="w-6 h-6 sm:w-8 sm:h-8" />
           </div>
         </div>
       </footer>
