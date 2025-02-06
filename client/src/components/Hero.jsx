@@ -5,7 +5,7 @@ import { fadeIn } from "../variants.js";
 
 function Hero() {
   return (
-    <div className="w-full h-full bg-black flex flex-col md:flex-row">
+    <div className="w-full h-full bg-black flex flex-col md:flex-row mt-20">
       <motion.div
         variants={fadeIn("left", 0.3)}
         initial="hidden"
