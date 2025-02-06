@@ -15,14 +15,26 @@ function Footer() {
   return (
     <div className="bg-white" id="affiliations">
       {/* Company Logos Section */}
-      <div className="Company flex bg-black w-full items-center p-2 sm:p-4 justify-center gap- sm:gap-8 mt-[-20px] overflow-x-auto sm:overflow-x-visible">
-        <img src={image7} alt="image7.png" className="w-12 h-10 sm:w-16 sm:h-14" />
-        <img src={image8} alt="image8.png" className="w-16 h-16 sm:w-20 sm:h-20" />
-        <img src={image9} alt="image9.png" className="w-16 h-18 sm:w-20 sm:h-22" />
-        <img src={image10} alt="image10.png" className="w-16 h-16 sm:w-20 sm:h-20" />
-        <img src={image11} alt="image11.png" className="w-32 h-14 sm:w-40 sm:h-16" />
-        <img src={image12} alt="image12.png" className="w-16 h-16 sm:w-20 sm:h-20" />
-        <img src={image13} alt="image13.png" className="w-16 h-16 sm:w-20 sm:h-20" />
+      <div className="logos">
+        <div className="logos-slide">
+          {/* First set of logos */}
+          <img src={image7} alt="image7.png" />
+          <img src={image8} alt="image8.png" />
+          <img src={image9} alt="image9.png" />
+          <img src={image10} alt="image10.png" />
+          <img src={image11} alt="image11.png" />
+          <img src={image12} alt="image12.png" />
+          <img src={image13} alt="image13.png" />
+
+          {/* Duplicate the logos for seamless looping */}
+          <img src={image7} alt="image7.png" />
+          <img src={image8} alt="image8.png" />
+          <img src={image9} alt="image9.png" />
+          <img src={image10} alt="image10.png" />
+          <img src={image11} alt="image11.png" />
+          <img src={image12} alt="image12.png" />
+          <img src={image13} alt="image13.png" />
+        </div>
       </div>
 
       {/* Footer Section */}
@@ -30,7 +42,9 @@ function Footer() {
         {/* Logo and Company Name */}
         <div className="Logo-Name flex items-center justify-center sm:justify-start mb-4 sm:mb-0">
           <img src={go8} alt="GO8 Logo" className="w-16 h-16 sm:w-20 sm:h-20" />
-          <h1 className="text-lg sm:text-xl font-bold ml-3">GO 8 Technology Inc.</h1>
+          <h1 className="text-lg sm:text-xl font-bold ml-3">
+            GO 8 Technology Inc.
+          </h1>
         </div>
 
         {/* Contact Section */}
@@ -40,8 +54,12 @@ function Footer() {
             <h1 className="text-xs sm:text-sm text-gray-600">09123456789</h1>
           </div>
           <div className="SendUs">
-            <h1 className="font-semibold text-sm sm:text-lg">Send Us a Message</h1>
-            <h1 className="text-xs sm:text-sm text-gray-600">information@go8.com</h1>
+            <h1 className="font-semibold text-sm sm:text-lg">
+              Send Us a Message
+            </h1>
+            <h1 className="text-xs sm:text-sm text-gray-600">
+              information@go8.com
+            </h1>
           </div>
         </div>
 
@@ -49,9 +67,17 @@ function Footer() {
         <div className="FollowUs text-center sm:text-left mt-4 sm:mt-0">
           <h1 className="font-semibold text-sm sm:text-lg mb-2">Follow Us</h1>
           <div className="SocialMediaLogo flex justify-center sm:justify-start gap-3 sm:gap-4">
-            <img src={facebook} alt="Facebook" className="w-6 h-6 sm:w-8 sm:h-8" />
+            <img
+              src={facebook}
+              alt="Facebook"
+              className="w-6 h-6 sm:w-8 sm:h-8"
+            />
             <img src={tiktok} alt="TikTok" className="w-6 h-6 sm:w-8 sm:h-8" />
-            <img src={youtube} alt="YouTube" className="w-6 h-6 sm:w-8 sm:h-8" />
+            <img
+              src={youtube}
+              alt="YouTube"
+              className="w-6 h-6 sm:w-8 sm:h-8"
+            />
           </div>
         </div>
       </footer>

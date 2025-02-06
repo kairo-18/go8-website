@@ -8,3 +8,59 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+.logos {
+  overflow: hidden;
+  padding: 40px 0;
+  background-color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.logos:before,
+.logos:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(0, 0, 0, 0), black);
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), black);
+}
+
+.logos-slide {
+  display: flex;
+  align-items: center;
+  animation: scroll-left 10s linear infinite;
+  width: max-content;
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide img {
+  height: 100px;
+  width: auto;
+  margin-right: 100px;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
