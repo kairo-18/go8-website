@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import cube from "/src/assets/values/cube.png";
 import { motion } from "framer-motion";
 
@@ -6,14 +6,34 @@ function Values() {
     return (
         <div
             id="about"
-            className="OuterLayer bg-black sm:h-[75vh] w-screen sm:flex-row flex flex-col pl-20 pr-20 relative pt-15 overflow-x-clip mb-[5%]"
+            className="OuterLayer bg-black sm:min-h-[75vh] w-full sm:flex-row flex flex-col px-5 sm:px-20 relative pt-15 mb-[5%] mt-10"
         >
-            <div className="w-full sm:w-4/5 text-center sm:text-left flex flex-col content-between gap-20 z-1 ml-[5%]">
-                <div>
-                    <h1 className="text-[#2669FF] text-3xl font-bold">
+            <div className="w-full sm:w-4/5 text-center sm:text-left flex flex-col content-between gap-20 z-2 sm:ml-[5%]">
+                <motion.div
+                    initial={{ opacity: 0, y: 50 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    viewport={{ once: true, amount: 0.2 }} // ✅ Ensure correct viewport settings
+                    
+                    className="text-center sm:text-left"
+                >
+                    <motion.h1
+                        className="text-[#2669FF] text-3xl font-bold"
+                        initial={{ opacity: 0, y: -50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }} // ✅ Fix placement
+                    >
                         WHAT WE DO
-                    </h1>
-                    <h4 className="text-white text-lg mt-5 w-3/4">
+                    </motion.h1>
+
+                    <motion.h4
+                        className="text-white text-lg mt-5 max-w-[75%] sm:mx-0 mx-auto"
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.4 }}
+                        viewport={{ once: true, amount: 0.2 }} // ✅ Fix placement
+                    >
                         At GO8 Technology Inc., we specialize in providing
                         cutting-edge IT solutions designed to meet the unique
                         needs of small and medium-sized businesses. From
@@ -23,37 +43,37 @@ function Values() {
                         it's developing software, optimizing workflows, or
                         integrating digital tools, we empower businesses to
                         thrive in an ever-evolving digital landscape.
-                    </h4>
-                </div>
+                    </motion.h4>
+                </motion.div>
 
-                <div className="mission-vision flex sm:flex-row flex-col gap-20 w-3/4">
+                <div className="mission-vision flex sm:flex-row flex-col flex-wrap gap-10 w-full max-w-[90%] z-2 mx-auto sm:mx-0">
                     <motion.div
                         initial={{
                             background: [
-                                "linear-gradient(135deg, #2669FF, #00D4FF)", // Bright cyan for high contrast
-                                "linear-gradient(135deg, #00D4FF, #2669FF)", // Reverse the colors for a pulsing effect
+                                "linear-gradient(135deg, rgba(38, 105, 255, 0.6), rgba(0, 212, 255, 0.6))",
+                                "linear-gradient(135deg, rgba(0, 212, 255, 0.6), rgba(38, 105, 255, 0.6))",
                             ],
                         }}
                         animate={{
                             background: [
-                                "linear-gradient(135deg, #2669FF, #00D4FF)", // Pulse effect with contrasting colors
-                                "linear-gradient(135deg, #00D4FF, #2669FF)", // Reverse the pulse effect
+                                "linear-gradient(135deg, rgba(38, 105, 255, 0.6), rgba(0, 212, 255, 0.6))",
+                                "linear-gradient(135deg, rgba(0, 212, 255, 0.6), rgba(38, 105, 255, 0.6))",
                             ],
                         }}
                         whileHover={{
                             background: [
-                                "linear-gradient(to right, #2669FF -200%, #00D4FF -100%, #8A2BE2 0%,   #00D4FF 100%)",
-                                "linear-gradient(to right, #2669FF -100%, #00D4FF 0%,    #8A2BE2 100%, #00D4FF 200%)",
-                                "linear-gradient(to right, #2669FF 0%,    #00D4FF 100%,  #8A2BE2 200%, #00D4FF 300%)",
+                                "linear-gradient(to right, rgba(38, 105, 255, 1) -200%, rgba(0, 212, 255, 1) -100%, rgba(138, 43, 226, 1) 0%, rgba(0, 212, 255, 1) 100%)",
+                                "linear-gradient(to right, rgba(38, 105, 255, 1) -100%, rgba(0, 212, 255, 1) 0%, rgba(138, 43, 226, 1) 100%, rgba(0, 212, 255, 1) 200%)",
+                                "linear-gradient(to right, rgba(38, 105, 255, 1) 0%, rgba(0, 212, 255, 1) 100%, rgba(138, 43, 226, 1) 200%, rgba(0, 212, 255, 1) 300%)",
                             ],
                         }}
                         transition={{
-                            duration: 2, // Controls the speed of the pulse animation
-                            repeat: Infinity, // Ensure it repeats indefinitely
-                            repeatType: "reverse", // Ensures the pulse goes back and forth
-                            ease: "easeInOut", // Smooth animation effect
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            ease: "easeInOut",
                         }}
-                        className="mission group cursor-pointer p-5 rounded-lg pt-10 flex flex-col items-center justify-center h-64 shadow-lg hover:shadow-2xl transition-shadow"
+                        className="mission group cursor-pointer p-5 rounded-lg pt-10 flex flex-col items-center justify-center h-64 shadow-lg hover:shadow-2xl transition-shadow w-full sm:w-[45%]"
                     >
                         <h1 className="text-white text-center text-3xl group-hover:translate-y-[-25px] transition-transform duration-800 font-bold">
                             OUR MISSION
@@ -64,33 +84,34 @@ function Values() {
                             productivity, and efficiency.
                         </h4>
                     </motion.div>
-                    <motion.div 
-                    initial={{
-                        background: [
-                            "linear-gradient(135deg, #2669FF, #00D4FF)", // Bright cyan for high contrast
-                            "linear-gradient(135deg, #00D4FF, #2669FF)", // Reverse the colors for a pulsing effect
-                        ],
-                    }}
-                    animate={{
-                        background: [
-                            "linear-gradient(135deg, #2669FF, #00D4FF)", // Pulse effect with contrasting colors
-                            "linear-gradient(135deg, #00D4FF, #2669FF)", // Reverse the pulse effect
-                        ],
-                    }}
-                    whileHover={{
-                        background: [
-                            "linear-gradient(to right, #2669FF -200%, #00D4FF -100%, #8A2BE2 0%,   #00D4FF 100%)",
-                            "linear-gradient(to right, #2669FF -100%, #00D4FF 0%,    #8A2BE2 100%, #00D4FF 200%)",
-                            "linear-gradient(to right, #2669FF 0%,    #00D4FF 100%,  #8A2BE2 200%, #00D4FF 300%)",
-                        ],
-                    }}
-                    transition={{
-                        duration: 2, // Controls the speed of the pulse animation
-                        repeat: Infinity, // Ensure it repeats indefinitely
-                        repeatType: "reverse", // Ensures the pulse goes back and forth
-                        ease: "easeInOut", // Smooth animation effect
-                    }}
-                    className="vision group cursor-pointer bg-[#2669FF] p-5 rounded-lg pt-10 flex flex-col items-center justify-center h-64">
+                    <motion.div
+                        initial={{
+                            background: [
+                                "linear-gradient(135deg, rgba(38, 105, 255, 0.6), rgba(0, 212, 255, 0.6))",
+                                "linear-gradient(135deg, rgba(0, 212, 255, 0.6), rgba(38, 105, 255, 0.6))",
+                            ],
+                        }}
+                        animate={{
+                            background: [
+                                "linear-gradient(135deg, rgba(38, 105, 255, 0.6), rgba(0, 212, 255, 0.6))",
+                                "linear-gradient(135deg, rgba(0, 212, 255, 0.6), rgba(38, 105, 255, 0.6))",
+                            ],
+                        }}
+                        whileHover={{
+                            background: [
+                                "linear-gradient(to right, rgba(38, 105, 255, 1) -200%, rgba(0, 212, 255, 1) -100%, rgba(138, 43, 226, 1) 0%, rgba(0, 212, 255, 1) 100%)",
+                                "linear-gradient(to right, rgba(38, 105, 255, 1) -100%, rgba(0, 212, 255, 1) 0%, rgba(138, 43, 226, 1) 100%, rgba(0, 212, 255, 1) 200%)",
+                                "linear-gradient(to right, rgba(38, 105, 255, 1) 0%, rgba(0, 212, 255, 1) 100%, rgba(138, 43, 226, 1) 200%, rgba(0, 212, 255, 1) 300%)",
+                            ],
+                        }}
+                        transition={{
+                            duration: 2,
+                            repeat: Infinity,
+                            repeatType: "reverse",
+                            ease: "easeInOut",
+                        }}
+                        className="vision group cursor-pointer bg-[#2669FF] p-5 rounded-lg pt-10 flex flex-col items-center justify-center h-64 w-full sm:w-[45%]"
+                    >
                         <h1 className="text-white text-center text-3xl group-hover:translate-y-[-25px] transition-transform duration-800 font-bold">
                             OUR VISION
                         </h1>
@@ -103,8 +124,12 @@ function Values() {
                 </div>
             </div>
 
-            <div className="bgAsset absolute sm:top-[-200px] top-0 right-[-15%] z-1  h-[100%]">
-                <img src={cube} alt="Cube" className="" />
+            <div className="bgAsset absolute md:block hidden sm:top-[-5%] top-0 right-0 z-1 max-w-[60%] sm:max-w-[40%]">
+                <img
+                    src={cube}
+                    alt="Cube"
+                    className="w-full h-auto object-contain"
+                />
             </div>
         </div>
     );
