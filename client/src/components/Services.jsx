@@ -15,7 +15,7 @@ const TextSphere = () => {
     ];
 
     const options = {
-      radius: window.innerWidth < 768 ? 120 : 250, // ✅ Responsive radius
+      radius: window.innerWidth < 768 ? 120 : 200, // ✅ Responsive radius
       maxSpeed: "normal",
       initSpeed: "normal",
       keep: false,
@@ -27,7 +27,9 @@ const TextSphere = () => {
   }, []);
 
   return (
-    <div className="text-sphere w-full overflow-hidden"> {/* ✅ Prevent overflow */}
+    <div className="text-sphere w-full overflow-hidden">
+      {" "}
+      {/* ✅ Prevent overflow */}
       <span className="tagcloud text-white text-lg"></span>
     </div>
   );
@@ -35,7 +37,7 @@ const TextSphere = () => {
 
 const Services = () => {
   return (
-    <div className="w-[90vw] h-[50vh] m-10 bg-black relative flex justify-between items-center overflow-hidden">
+    <div className="w-[90vw] h-[50vh] m-5 bg-black relative flex justify-between items-center overflow-hidden">
       <TextSphere />
       <h1 className="text-5xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10 font-['Smooch_Sans']">
         CORE <br />
