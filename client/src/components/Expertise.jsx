@@ -1,10 +1,11 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import image1 from "../assets/expertise/1.png";
 import image2 from "../assets/expertise/2.png";
 import image3 from "../assets/expertise/3.png";
 import image4 from "../assets/expertise/4.png";
 import image5 from "../assets/expertise/5.png";
+import image6 from "../assets/expertise/6.png";
+import image7 from "../assets/expertise/7.png";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 
@@ -30,6 +31,14 @@ function Expertise() {
       url: image5,
       title: "Financial Technology (FinTech)",
     },
+    {
+      url: image6,
+      title: "Game Development",
+    },
+    {
+      url: image7,
+      title: "Blockchain",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,6 +48,7 @@ function Expertise() {
     const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
     setCurrentIndex(newIndex);
   };
+
   const nextSlide = () => {
     const isLastSlide = currentIndex === slides.length - 1;
     const newIndex = isLastSlide ? 0 : currentIndex + 1;
@@ -49,9 +59,18 @@ function Expertise() {
     setCurrentIndex(slideIndex);
   };
 
+  // Auto-scroll functionality
+  useEffect(() => {
+    const autoScroll = setInterval(() => {
+      nextSlide();
+    }, 3000); // Change slide every 3 seconds
+
+    return () => clearInterval(autoScroll); // Cleanup interval on unmount
+  }, [currentIndex]); // Re-run effect when currentIndex changes
+
   return (
     <div className="w-full h-full bg-black text-white pt-5 overflow-x-clip">
-      <h1 className="text-6xl text-left ml-[9%] mt-1 font-bold text-[#2669FF] font-[Smooch_Sans] ">
+      <h1 className="text-6xl text-left ml-[9%] mt-1 font-bold text-[#2669FF] font-[Smooch_Sans]">
         INDUSTRY EXPERTISE
       </h1>
 
