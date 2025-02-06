@@ -8,13 +8,12 @@ function Hero() {
     <div className="w-full h-full bg-white dark:bg-black flex flex-col md:flex-row mt-20 overflow-x-clip">
       {/* Left Image Section */}
       <motion.div
-        variants={fadeIn("left", 0.3)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
+        initial={{ x: "-100%", opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1.5, ease: "easeOut" }}
         className="hidden md:block md:w-3/5 md:ml-20"
       >
-        <img src={face} alt="face.png" className="w-full h-auto" />
+        <img src={face} alt="face.png" className="w-full h-auto z-0" />
       </motion.div>
 
       {/* Right Content Section */}
