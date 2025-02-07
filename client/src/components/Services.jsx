@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TagCloud from "TagCloud";
 import textSphereBg from "../assets/core-services/text-sphere-bg.png";
+import textSphereBgWhite from "../assets/core-services/text-sphere-bg-white.png";
 
 const TextSphere = () => {
   useEffect(() => {
@@ -33,30 +34,46 @@ const TextSphere = () => {
 };
 
 const Services = () => {
-  const [darkMode, setDarkMode] = useState(
-    document.documentElement.classList.contains("dark")
-  );
+  const [darkMode, setDarkMode] = useState(false);
 
-  const toggleDarkMode = () => {
-    const html = document.documentElement;
-    if (darkMode) {
-      html.classList.remove("dark");
-      html.classList.add("light");
-    } else {
-      html.classList.remove("light");
-      html.classList.add("dark");
-    }
-    setDarkMode(!darkMode);
-  };
+  useEffect(() => {
+    const checkDarkMode = () => {
+      const isDark = document.documentElement.classList.contains("dark");
+      setDarkMode(isDark);
+    };
+
+    checkDarkMode();
+
+    // Listen for dark mode toggle
+    const observer = new MutationObserver(checkDarkMode);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <div className="w-[90vw] h-[50vh] m-5 relative flex justify-between items-center overflow-hidden bg-white dark:bg-black text-black dark:text-white mt-50" id="services">
+    <div
+      className="w-[90vw] h-[50vh] m-5 relative flex justify-between items-center overflow-hidden 
+      bg-white dark:bg-black text-black dark:text-white mt-5"
+      id="services"
+    >
+      {/* Background with blur effect */}
+      <div className="absolute top-0 left-40 z-0">
+        <img
+          src={darkMode ? textSphereBg : textSphereBgWhite}
+          alt="Text Sphere Background"
+          className="w-full h-full object-cover"
+        />
+      </div>
+
       <TextSphere />
       <h1 className="text-5xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10 font-['Smooch_Sans']">
         CORE <br />
         SERVICES
       </h1>
-
 
       <style jsx="true">{`
         .text-sphere {
@@ -68,8 +85,6 @@ const Services = () => {
           display: flex;
           justify-content: center;
           align-items: center;
-          background: url(${textSphereBg}) no-repeat center;
-          background-size: contain;
           z-index: 1;
           overflow: hidden;
         }

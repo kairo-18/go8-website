@@ -21,12 +21,10 @@ const Expertise = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Go to previous slide
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
   };
 
-  // Go to next slide
   const nextSlide = () => {
     setCurrentIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
   };
@@ -34,8 +32,8 @@ const Expertise = () => {
   // Auto-slide functionality
 
   useEffect(() => {
-    const autoScroll = setInterval(nextSlide, 3000); // Slide every 3 seconds
-    return () => clearInterval(autoScroll); // Clean up on unmount
+    const autoScroll = setInterval(nextSlide, 3000);
+    return () => clearInterval(autoScroll);
   }, [currentIndex]);
 
   return (
@@ -92,7 +90,7 @@ const Expertise = () => {
                 className={`cursor-pointer p-1 rounded-full transition-all ${
                   index === currentIndex
                     ? "bg-[#2669FF] scale-125"
-                    : "bg-white opacity-50"
+                    : "bg-black opacity-50"
                 }`}
               />
             ))}
