@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import TagCloud from "TagCloud";
+import { motion } from "framer-motion"; // Import motion from framer-motion
 import textSphereBg from "../assets/core-services/text-sphere-bg.png";
 import textSphereBgWhite from "../assets/core-services/text-sphere-bg-white.png";
 
@@ -119,15 +120,19 @@ const Services = () => {
       <TextSphere setDescription={setDescription} />
       <div className="text-left z-10 description-container">
         <h1 className="text-5xl font-bold text-[#2669FF] text-left mb-5  z-10 font-['Smooch_Sans']">
-          CORE <br />
-          SERVICES
+          CORE SERVICES
         </h1>
 
         <div className="text-left z-10">
-          <p className="text-2xl font-['Montserrat'] text-black dark:text-white">
-            {" "}
+          <motion.p
+            className="text-2xl font-['Montserrat'] text-black dark:text-white"
+            key={description} // Ensure the description changes trigger animation
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }} // Animation duration
+          >
             {description}
-          </p>
+          </motion.p>
         </div>
       </div>
 
