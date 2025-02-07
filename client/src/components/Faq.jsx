@@ -23,9 +23,9 @@ const Faq = () => {
     ];
 
     const rightSections = [
-        { title: 'What types of IT solutions does GO8 Technology Inc. offer?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-        { title: 'Who can benefit from your services?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
-        { title: 'How does GO8 Technology Inc. ensure its solutions meet my business needs?', content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.' },
+        { title: 'What types of IT solutions does GO8 Technology Inc. offer?', content: 'We provide a wide range of IT solutions, including software development, workflow optimization, digital tool integration, and customized strategies to enhance business productivity and efficiency.' },
+        { title: 'Who can benefit from your services?', content: 'Our services are designed primarily for small and medium-sized enterprises looking to streamline their operations, adopt innovative technologies, and achieve sustainable growth in the digital age.' },
+        { title: 'How does GO8 Technology Inc. ensure its solutions meet my business needs?', content: 'We take a personalized approach by understanding your business goals and challenges. Our team then designs and implements tailored IT solutions that align with your objectives, ensuring maximum impact and value.' },
     ];
 
     return (

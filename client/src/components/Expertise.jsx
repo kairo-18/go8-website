@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import image1 from "../assets/expertise/1.png";
-import image2 from "../assets/expertise/2.png";
-import image3 from "../assets/expertise/3.png";
-import image4 from "../assets/expertise/4.png";
-import image5 from "../assets/expertise/5.png";
-import image6 from "../assets/expertise/6.png";
-import image7 from "../assets/expertise/7.png";
+import image1 from "../assets/expertise/9.png";
+import image2 from "../assets/expertise/10.png";
+import image3 from "../assets/expertise/11.png";
+import image4 from "../assets/expertise/12.png";
+import image5 from "../assets/expertise/13.png";
+import image6 from "../assets/expertise/14.png";
+import image7 from "../assets/expertise/15.png";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 
 const Expertise = () => {

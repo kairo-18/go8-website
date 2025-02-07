@@ -1,4 +1,4 @@
-import face from "../assets/hero/Face.png";
+import hero from "../assets/hero/hero5.png";
 import hiveBg from "../assets/hero/transparent-hive.png";
 import { motion } from "framer-motion";
 import { fadeIn } from "../variants.js";
@@ -11,9 +11,14 @@ function Hero() {
         initial={{ x: "-100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="hidden md:block w-4/5 md:w-2/3 lg:w-3/5 ml-0 mt-10 "
+        className="hidden md:block w-full md:w-5/6 lg:w-4/5 ml-0 mt-10 flex items-start"
       >
-        <img src={face} alt="face.png" className="w-full h-auto z-0" />
+        <img
+          src={hero}
+          alt="hero5.png"
+          className="w-full h-auto object-contain z-0"
+          style={{ paddingTop: "10px" }} // Adjust padding if necessary
+        />
       </motion.div>
 
       {/* Right Content Section */}
@@ -22,7 +27,7 @@ function Hero() {
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
-        className="mt-10 w-screen h-[80vh] p-10 relative z-10 mx-auto md:mt-0 md:ml-5"
+        className="mt-10 w-screen h-[80vh] p-10 relative z-10 mx-auto md:mt-0 md:ml-5 -ml-3" 
         style={{
           backgroundImage: `url(${hiveBg})`,
           backgroundSize: "cover",

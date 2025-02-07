@@ -15,7 +15,7 @@ import arcus3 from "/src/assets/projects/arcus/arcus3.png";
 import aurum1 from "/src/assets/projects/aurum/aurum1.png";
 import aurum2 from "/src/assets/projects/aurum/aurum2.png";
 import aurum3 from "/src/assets/projects/aurum/aurum3.png";
-import projBg from "/src/assets/projects/grid-bg-4.png";
+import projBg from "/src/assets/projects/grid-bg-6.png";
 
 const App = () => {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -59,7 +59,7 @@ const App = () => {
               backgroundPosition: "center",
             }}
           >
-            <h1 className="text-3xl md:text-4xl text-left ml-[5%] md:ml-[9%] mt-10 mb-10 md:mb-20 font-bold text-[#2669FF]">
+            <h1 className="text-3xl md:text-4xl text-left ml-[5%] md:ml-[9%] mt-10 mb-10 md:mb-20 font-bold text-[#2669FF] font-['Smooch_Sans']">
               OUR PROJECTS
             </h1>
             <div className="space-y-10 md:space-y-0 px-4 w-full max-w-full">
