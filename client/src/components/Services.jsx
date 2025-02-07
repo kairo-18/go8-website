@@ -15,6 +15,21 @@ const TextSphere = () => {
       "Strategic Consulting & Coaching",
     ];
 
+    const descriptions = {
+      "Hardware technology":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Digital Marketing":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Software Development":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "IT Consulting":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Digital Cards Solution":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Strategic Consulting & Coaching":
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    };
+
     const options = {
       radius: window.innerWidth < 768 ? 120 : 200,
       maxSpeed: "normal",
@@ -60,7 +75,7 @@ const Services = () => {
       id="services"
     >
       {/* Background with blur effect */}
-      <div className="absolute top-0 left-40 z-0">
+      <div className="absolute top-0 left-13 z-0">
         <img
           src={darkMode ? textSphereBg : textSphereBgWhite}
           alt="Text Sphere Background"
@@ -69,10 +84,19 @@ const Services = () => {
       </div>
 
       <TextSphere />
-      <h1 className="text-5xl font-bold text-[#2669FF] absolute right-[20%] text-left mb-20 z-10 font-['Smooch_Sans']">
-        CORE <br />
-        SERVICES
-      </h1>
+      <div className="relative">
+        <h1 className="text-5xl font-bold text-[#2669FF] text-left mb-5  z-10 font-['Smooch_Sans']">
+          CORE <br />
+          SERVICES
+        </h1>
+
+        <div className="text-left z-10">
+          <p className="text-2xl font-['Montserrat']  text-black dark:text-white">
+            We provide a wide range of services to help you grow your business.
+            {/* Will change into the descriptions of the hovered text array */}
+          </p>
+        </div>
+      </div>
 
       <style jsx="true">{`
         .text-sphere {
