@@ -11,7 +11,7 @@ function Hero() {
         initial={{ x: "-100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 1.5, ease: "easeOut" }}
-        className="hidden md:block md:w-3/5 md:ml-20"
+        className="hidden md:block w-4/5 md:w-2/3 lg:w-3/5 ml-0 mt-10 "
       >
         <img src={face} alt="face.png" className="w-full h-auto z-0" />
       </motion.div>

@@ -43,17 +43,20 @@ const Navbar = () => {
   };
 
   return (
-    <div className="w-full flex text-black dark:text-white p-5 justify-between items-center bg-white dark:bg-black fixed z-50 top-0">
+    <div className="w-full flex text-black dark:text-white p-3 justify-between items-center bg-white dark:bg-black fixed z-50 top-0">
       {/* Logo Section */}
-      <div className="logo font-bold ml-[10%] flex">
+      <div className="logo font-bold ml-[10%] flex items-center">
         <motion.img
           initial={[{ scale: 0, rotate: 360, x: -60 }]}
           animate={[{ scale: 1, rotate: 0, x: 0 }]}
           transition={{ duration: 0.55 }}
           src={go}
-          className="w-15 h-15 mt-[-7px]"
+          className="w-30 h-30 mt-[-5px] object-contain"
         />
-        <img src={o8} className="w-15 h-10 mt-[0px] ml-[-15px]" />
+        <img
+          src={o8}
+          className="w-20 h-20 object-contain ml-[-20px] mt-[0px]"
+        />
       </div>
 
       {/* Navigation Links */}
@@ -98,7 +101,7 @@ const Navbar = () => {
           className="flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-lg sm:rounded-xl cursor-pointer"
         >
           <motion.div
-            key={darkMode} // Ensures smooth icon transition
+            key={darkMode}
             initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
             animate={{ opacity: 1, rotate: 0, scale: 1 }}
             exit={{ opacity: 0, rotate: 90, scale: 0.5 }}

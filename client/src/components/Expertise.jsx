@@ -39,7 +39,7 @@ const Expertise = () => {
   }, [currentIndex]);
 
   return (
-    <div className="w-full h-full bg-black text-white pt-5 overflow-hidden">
+    <div className="w-full h-full bg-white dark:bg-black pt-5 overflow-hidden">
       <h1 className="text-6xl text-left ml-[9%] mt-1 font-bold text-[#2669FF] font-[Smooch_Sans]">
         INDUSTRY EXPERTISE
       </h1>

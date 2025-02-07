@@ -12,7 +12,7 @@ html {
 .logos {
   overflow: hidden;
   padding: 40px 0;
-  background-color: black;
+  background-color: white;
   position: relative;
   display: flex;
   align-items: center;
@@ -27,16 +27,38 @@ html {
   width: 100px;
   height: 100%;
   z-index: 2;
+  pointer-events: none;
 }
 
 .logos:before {
   left: 0;
-  background: linear-gradient(to left, rgba(0, 0, 0, 0), black);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
 }
 
 .logos:after {
   right: 0;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0), black);
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Dark mode support */
+.dark .logos {
+  background-color: black;
+}
+
+.dark .logos:before {
+  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+
+.dark .logos:after {
+  background: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
 }
 
 .logos-slide {
@@ -56,6 +78,7 @@ html {
   margin-right: 100px;
 }
 
+/* Keep animation smooth */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
