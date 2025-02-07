@@ -44,7 +44,6 @@ const Services = () => {
 
     checkDarkMode();
 
-    // Listen for dark mode toggle
     const observer = new MutationObserver(checkDarkMode);
     observer.observe(document.documentElement, {
       attributes: true,
